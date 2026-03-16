@@ -1,0 +1,35 @@
+aid: apache-knox
+name: Apache Knox
+description: >-
+  Apache Knox is a REST API and application gateway for the Apache Hadoop ecosystem. It provides a single access point for all REST and HTTP interactions with Apache Hadoop clusters, with authentication, authorization, and audit capabilities.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - API Gateway
+  - Security
+  - Hadoop
+  - Authentication
+  - SSO
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-knox/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-knox:apache-knox
+    name: Apache Knox
+    description: >-
+      Knox provides a gateway REST API that proxies and secures access to Hadoop ecosystem services (HDFS, Hive, HBase, Oozie, etc.), with topology definition APIs, token management APIs, and service discovery for dynamic cluster integration.
+    humanURL: https://knox.apache.org/books/knox-2-0-0/user-guide.html
+    tags:
+      - API Gateway
+      - Security
+      - REST
+    properties:
+      - type: Documentation
+        url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
