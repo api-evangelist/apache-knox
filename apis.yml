@@ -8,9 +8,9 @@ access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - API Gateway
-  - Security
-  - Hadoop
   - Authentication
+  - Hadoop
+  - Security
   - SSO
 created: '2026-03-16'
 modified: '2026-03-16'
@@ -25,8 +25,8 @@ apis:
     humanURL: https://knox.apache.org/books/knox-2-0-0/user-guide.html
     tags:
       - API Gateway
-      - Security
       - REST
+      - Security
     properties:
       - type: Documentation
         url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
