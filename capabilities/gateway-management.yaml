@@ -1,0 +1,104 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Apache Knox Gateway Management"
+  description: "Workflow capability for Hadoop administrators and security engineers to manage Knox gateway topologies, service descriptors, and provider configurations."
+  tags:
+    - Apache Knox
+    - Gateway Management
+    - Hadoop Administration
+    - Security Engineering
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      KNOX_ADMIN_PASSWORD: KNOX_ADMIN_PASSWORD
+
+capability:
+  consumes:
+    - import: knox-admin
+      location: ./shared/knox-admin-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: knox-gateway-management-api
+      description: "Unified REST API for Apache Knox gateway management."
+      resources:
+        - path: /v1/topologies
+          name: topologies
+          operations:
+            - method: GET
+              name: list-topologies
+              call: "knox-admin.list-topologies"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-topology
+              call: "knox-admin.create-topology"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: DELETE
+              name: delete-topology
+              call: "knox-admin.delete-topology"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: knox-gateway-management-mcp
+      transport: http
+      description: "MCP server for AI-assisted Apache Knox gateway management."
+      tools:
+        - name: list-topologies
+          description: List all Knox gateway topologies and their service URLs
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "knox-admin.list-topologies"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-topology
+          description: Get the configuration details of a specific Knox topology
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "knox-admin.get-topology"
+          with:
+            topologyName: "tools.topology_name"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-topology
+          description: Create or update a Knox gateway topology
+          hints:
+            readOnly: false
+          call: "knox-admin.create-topology"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: delete-topology
+          description: Delete a Knox gateway topology
+          hints:
+            readOnly: false
+            destructive: true
+          call: "knox-admin.delete-topology"
+          with:
+            topologyName: "tools.topology_name"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-knox-version
+          description: Get Apache Knox gateway version information
+          hints:
+            readOnly: true
+          call: "knox-admin.get-version"
+          outputParameters:
+            - type: object
+              mapping: "$."

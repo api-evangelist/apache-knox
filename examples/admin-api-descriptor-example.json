@@ -1,0 +1,10 @@
+{
+  "name": "hadoop-cluster",
+  "discoveryType": "Ambari",
+  "discoveryAddress": "http://ambari:8080",
+  "cluster": "my-cluster",
+  "providerConfig": "my-provider-config",
+  "services": [
+    {}
+  ]
+}

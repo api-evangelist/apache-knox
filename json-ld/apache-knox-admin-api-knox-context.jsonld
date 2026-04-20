@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "knox": "https://apache-knox.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "KnoxVersion": "knox:KnoxVersion",
+    "version": "schema:version",
+    "hash": {
+      "@id": "knox:hash",
+      "@type": "xsd:string"
+    }
+  }
+}

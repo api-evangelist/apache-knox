@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-knox/refs/heads/main/json-structure/admin-api-descriptor-structure.json",
+  "name": "Descriptor",
+  "description": "A Knox simple descriptor",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Descriptor name",
+      "example": "hadoop-cluster"
+    },
+    "discoveryType": {
+      "type": "string",
+      "description": "Service discovery type",
+      "example": "Ambari"
+    },
+    "discoveryAddress": {
+      "type": "string",
+      "description": "Discovery service address",
+      "example": "http://ambari:8080"
+    },
+    "cluster": {
+      "type": "string",
+      "description": "Cluster name",
+      "example": "my-cluster"
+    },
+    "providerConfig": {
+      "type": "string",
+      "description": "Referenced provider configuration",
+      "example": "my-provider-config"
+    },
+    "services": {
+      "type": "array",
+      "description": "Services exposed by this descriptor",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

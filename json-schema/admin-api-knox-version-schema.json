@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-knox/refs/heads/main/json-schema/admin-api-knox-version-schema.json",
+  "title": "KnoxVersion",
+  "description": "Knox gateway version information",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Knox version string",
+      "example": "2.0.0"
+    },
+    "hash": {
+      "type": "string",
+      "description": "Build hash",
+      "example": "abc123def"
+    }
+  }
+}

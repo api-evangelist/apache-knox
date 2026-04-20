@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-knox/refs/heads/main/json-structure/admin-api-descriptor-list-structure.json",
+  "name": "DescriptorList",
+  "description": "List of simple descriptors",
+  "properties": {
+    "descriptors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Descriptor"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-knox/refs/heads/main/json-schema/admin-api-topology-schema.json",
+  "title": "Topology",
+  "description": "A Knox gateway topology",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Topology name",
+      "example": "sandbox"
+    },
+    "uri": {
+      "type": "string",
+      "description": "Topology gateway URL",
+      "example": "https://localhost:8443/gateway/sandbox"
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Last modified timestamp",
+      "example": 1718153645993
+    }
+  }
+}

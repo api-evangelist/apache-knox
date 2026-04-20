@@ -1,0 +1,88 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Apache Knox"
+  description: "Vocabulary for Apache Knox gateway administration API and management workflows."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: knox-admin
+      name: Apache Knox Admin REST API
+      version: "2.0.0"
+      baseUrl: https://localhost:8443/gateway/admin
+      status: active
+
+  resources:
+    - name: topologies
+      description: Knox gateway topology configurations
+      apis: [knox-admin]
+      actions: [list, get, create, delete]
+    - name: descriptors
+      description: Simple service descriptors
+      apis: [knox-admin]
+      actions: [list, get, create, delete]
+    - name: provider-configs
+      description: Authentication and authorization provider configurations
+      apis: [knox-admin]
+      actions: [list, create]
+    - name: version
+      description: Knox gateway version information
+      apis: [knox-admin]
+      actions: [get]
+
+  actions:
+    - name: list
+      httpMethod: GET
+      pattern: read
+    - name: get
+      httpMethod: GET
+      pattern: read
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: delete
+      httpMethod: DELETE
+      pattern: destructive
+
+  authentication:
+    schemes:
+      - name: BasicAuth
+        type: http
+        scheme: basic
+
+capability:
+  workflows:
+    - name: Gateway Management
+      file: capabilities/gateway-management.yaml
+      toolCount: 5
+      personas:
+        - Hadoop Administrator
+        - Security Engineer
+
+  personas:
+    - id: hadoop-administrator
+      name: Hadoop Administrator
+      description: Admins who configure Knox topologies for Hadoop cluster access
+      workflows: [Gateway Management]
+    - id: security-engineer
+      name: Security Engineer
+      description: Engineers who configure authentication and authorization for Knox
+      workflows: [Gateway Management]
+
+  namespaces:
+    - name: knox-admin
+      type: consumed
+    - name: knox-gateway-management-api
+      type: rest-exposed
+      port: 8080
+    - name: knox-gateway-management-mcp
+      type: mcp-exposed
+      port: 9090
+
+crossReference:
+  - resource: topologies
+    operations: [listTopologies, getTopology, createTopology, deleteTopology, getTopologyUrls]
+    workflows: [Gateway Management]
+    personas: [Hadoop Administrator, Security Engineer]

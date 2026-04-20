@@ -1,0 +1,38 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "knox": "https://apache-knox.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "DescriptorList": "knox:DescriptorList",
+    "Descriptor": "knox:Descriptor",
+    "descriptors": {
+      "@id": "knox:descriptors",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "discoveryType": {
+      "@id": "knox:discoveryType",
+      "@type": "xsd:string"
+    },
+    "discoveryAddress": {
+      "@id": "knox:discoveryAddress",
+      "@type": "xsd:string"
+    },
+    "cluster": {
+      "@id": "knox:cluster",
+      "@type": "xsd:string"
+    },
+    "providerConfig": {
+      "@id": "knox:providerConfig",
+      "@type": "xsd:string"
+    },
+    "services": {
+      "@id": "knox:services",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  }
+}

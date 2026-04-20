@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-knox/refs/heads/main/json-structure/admin-api-topology-list-structure.json",
+  "name": "TopologyList",
+  "description": "List of Knox topologies",
+  "properties": {
+    "topologies": {
+      "type": "object",
+      "properties": {
+        "topology": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Topology"
+          }
+        }
+      }
+    }
+  }
+}

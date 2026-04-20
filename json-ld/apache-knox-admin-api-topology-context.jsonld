@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "knox": "https://apache-knox.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Topology": "knox:Topology",
+    "TopologyList": "knox:TopologyList",
+    "name": "schema:name",
+    "uri": {
+      "@id": "knox:uri",
+      "@type": "xsd:string"
+    },
+    "timestamp": {
+      "@id": "knox:timestamp",
+      "@type": "xsd:integer"
+    },
+    "topologies": {
+      "@id": "knox:topologies",
+      "@type": "@id"
+    },
+    "topology": {
+      "@id": "knox:topology",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}
