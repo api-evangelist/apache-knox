@@ -1,0 +1,106 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Knox Admin REST API — Providers
+  description: 'Apache Knox Admin REST API — Providers. 2 operations. Lead operation: Apache knox Apache Knox List Provider
+    Configs. Self-contained Naftiko capability covering one Apache Knox business surface.'
+  tags:
+  - Apache Knox
+  - Providers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_KNOX_API_KEY: APACHE_KNOX_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: admin-providers
+    baseUri: https://localhost:8443/gateway/admin
+    description: Apache Knox Admin REST API — Providers business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v1-providerconfig
+      path: /api/v1/providerconfig
+      operations:
+      - name: listproviderconfigs
+        method: GET
+        description: Apache knox Apache Knox List Provider Configs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createproviderconfig
+        method: POST
+        description: Apache knox Apache Knox Create Provider Config
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: basic
+      username: '{{env.APACHE_KNOX_USER}}'
+      password: '{{env.APACHE_KNOX_PASS}}'
+  exposes:
+  - type: rest
+    namespace: admin-providers-rest
+    port: 8080
+    description: REST adapter for Apache Knox Admin REST API — Providers. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/api/v1/providerconfig
+      name: api-v1-providerconfig
+      description: REST surface for api-v1-providerconfig.
+      operations:
+      - method: GET
+        name: listproviderconfigs
+        description: Apache knox Apache Knox List Provider Configs
+        call: admin-providers.listproviderconfigs
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createproviderconfig
+        description: Apache knox Apache Knox Create Provider Config
+        call: admin-providers.createproviderconfig
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: admin-providers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache Knox Admin REST API — Providers. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: apache-knox-apache-knox-list
+      description: Apache knox Apache Knox List Provider Configs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: admin-providers.listproviderconfigs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-knox-apache-knox-create
+      description: Apache knox Apache Knox Create Provider Config
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: admin-providers.createproviderconfig
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
