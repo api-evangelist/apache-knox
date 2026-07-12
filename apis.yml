@@ -53,6 +53,12 @@ apis:
   - type: Documentation
     url: https://knox.apache.org/books/knox-2-0-0/user-guide.html#Service+Details
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-knox-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-knox-domain-security.yml
+- type: Authentication
+  url: authentication/apache-knox-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/apache
 - type: GitHubRepository
@@ -109,6 +115,8 @@ common:
     description: Authorization policy enforcement via Ranger Knox plugin.
   - name: Apache Ambari
     description: Ambari REST API proxied through Knox for cluster management.
+  - url: https://cwiki.apache.org/confluence/display/KNOX/News
+    type: Blog
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
