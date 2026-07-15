@@ -53,6 +53,8 @@ apis:
   - type: Documentation
     url: https://knox.apache.org/books/knox-2-0-0/user-guide.html#Service+Details
 common:
+- type: AgenticAccess
+  url: agentic-access/apache-knox-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/apache-knox-vulnerability-disclosure.yml
 - type: DomainSecurity
