@@ -1,0 +1,153 @@
+openapi: 3.0.3
+info:
+  title: Apache Knox Admin REST Descriptors API
+  description: REST API for Apache Knox gateway administration including topology management, service discovery, token management, and audit operations.
+  version: 2.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    email: user@knox.apache.org
+servers:
+- url: https://localhost:8443/gateway/admin
+  description: Apache Knox Admin API
+security:
+- basicAuth: []
+tags:
+- name: Descriptors
+  description: Simple descriptor management
+paths:
+  /api/v1/descriptors:
+    get:
+      operationId: listDescriptors
+      summary: Apache knox Apache Knox List Descriptors
+      description: List all simple descriptors on the gateway.
+      tags:
+      - Descriptors
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      responses:
+        '200':
+          description: List of descriptors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescriptorList'
+              examples:
+                listDescriptors200Example:
+                  summary: Default listDescriptors 200 response
+                  x-microcks-default: true
+                  value:
+                    descriptors: []
+    post:
+      operationId: createDescriptor
+      summary: Apache knox Apache Knox Create Descriptor
+      description: Create a new simple descriptor.
+      tags:
+      - Descriptors
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Descriptor'
+            examples:
+              createDescriptorRequestExample:
+                summary: Default createDescriptor request
+                x-microcks-default: true
+                value:
+                  name: hadoop-cluster
+                  discoveryType: Ambari
+                  discoveryAddress: http://ambari:8080
+                  cluster: my-cluster
+                  providerConfig: my-provider-config
+                  services: []
+      responses:
+        '200':
+          description: Descriptor created
+  /api/v1/descriptors/{descriptorName}:
+    get:
+      operationId: getDescriptor
+      summary: Apache knox Apache Knox Get Descriptor
+      description: Get a specific simple descriptor.
+      tags:
+      - Descriptors
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      parameters:
+      - name: descriptorName
+        in: path
+        required: true
+        schema:
+          type: string
+        example: hadoop-cluster
+      responses:
+        '200':
+          description: Descriptor details
+    delete:
+      operationId: deleteDescriptor
+      summary: Apache knox Apache Knox Delete Descriptor
+      description: Delete a simple descriptor.
+      tags:
+      - Descriptors
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      parameters:
+      - name: descriptorName
+        in: path
+        required: true
+        schema:
+          type: string
+        example: hadoop-cluster
+      responses:
+        '200':
+          description: Descriptor deleted
+components:
+  schemas:
+    Descriptor:
+      type: object
+      description: A Knox simple descriptor
+      properties:
+        name:
+          type: string
+          description: Descriptor name
+          example: hadoop-cluster
+        discoveryType:
+          type: string
+          description: Service discovery type
+          example: Ambari
+        discoveryAddress:
+          type: string
+          description: Discovery service address
+          example: http://ambari:8080
+        cluster:
+          type: string
+          description: Cluster name
+          example: my-cluster
+        providerConfig:
+          type: string
+          description: Referenced provider configuration
+          example: my-provider-config
+        services:
+          type: array
+          description: Services exposed by this descriptor
+          items:
+            type: object
+    DescriptorList:
+      type: object
+      description: List of simple descriptors
+      properties:
+        descriptors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Descriptor'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic

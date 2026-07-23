@@ -1,0 +1,60 @@
+openapi: 3.0.3
+info:
+  title: Apache Knox Admin REST Descriptors Providers API
+  description: REST API for Apache Knox gateway administration including topology management, service discovery, token management, and audit operations.
+  version: 2.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    email: user@knox.apache.org
+servers:
+- url: https://localhost:8443/gateway/admin
+  description: Apache Knox Admin API
+security:
+- basicAuth: []
+tags:
+- name: Providers
+  description: Provider configuration management
+paths:
+  /api/v1/providerconfig:
+    get:
+      operationId: listProviderConfigs
+      summary: Apache knox Apache Knox List Provider Configs
+      description: List all provider configurations.
+      tags:
+      - Providers
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      responses:
+        '200':
+          description: List of provider configurations
+    post:
+      operationId: createProviderConfig
+      summary: Apache knox Apache Knox Create Provider Config
+      description: Create a new provider configuration.
+      tags:
+      - Providers
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            examples:
+              createProviderConfigRequestExample:
+                summary: Default createProviderConfig request
+                x-microcks-default: true
+                value: {}
+      responses:
+        '200':
+          description: Provider config created
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
