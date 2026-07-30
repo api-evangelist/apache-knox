@@ -4,9 +4,22 @@ description: Apache Knox is a REST API and application gateway for the Apache Ha
   point for all REST and HTTP interactions with Apache Hadoop clusters, with authentication, authorization, SSO, and audit
   capabilities. Governed by the Apache Software Foundation under Apache 2.0.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-knox.png
 tags:
 - API Gateway
 - Authentication
@@ -19,30 +32,11 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-knox/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: apache-knox:admin-api
-  name: Apache Knox Admin REST API
-  description: The Knox Admin REST API provides endpoints for topology management, service descriptor management, provider
-    configuration, and version information for administering the Knox gateway.
-  humanURL: https://knox.apache.org/books/knox-2-0-0/user-guide.html
-  tags:
-  - Administration
-  - API Gateway
-  - REST
-  properties:
-  - type: Documentation
-    url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
-  - type: OpenAPI
-    url: openapi/apache-knox-admin-api.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/admin-descriptors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/admin-providers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/admin-topologies.yaml
 - aid: apache-knox:gateway-api
   name: Apache Knox Gateway API
-  description: The Knox gateway proxies and secures access to Hadoop ecosystem services including HDFS WebHDFS, Hive, HBase
-    REST, YARN, Oozie, Ambari, and Ranger with authentication and authorization enforcement.
+  description: >-
+    The Knox gateway proxies and secures access to Hadoop ecosystem services including HDFS WebHDFS, Hive,
+    HBase REST, YARN, Oozie, Ambari, and Ranger with authentication and authorization enforcement.
   humanURL: https://knox.apache.org/books/knox-2-0-0/user-guide.html#Service+Details
   tags:
   - API Gateway
@@ -52,6 +46,57 @@ apis:
   properties:
   - type: Documentation
     url: https://knox.apache.org/books/knox-2-0-0/user-guide.html#Service+Details
+- aid: apache-knox:apache-knox-descriptors-api
+  name: Apache Knox Descriptors API
+  description: Simple descriptor management
+  humanURL: https://knox.apache.org/books/knox-2-0-0/user-guide.html
+  tags:
+  - Descriptors
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-knox-descriptors-api-openapi.yml
+  - type: Documentation
+    url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
+  - type: X-NaftikoCapability
+    url: capabilities/admin-descriptors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/admin-providers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/admin-topologies.yaml
+- aid: apache-knox:apache-knox-providers-api
+  name: Apache Knox Providers API
+  description: Provider configuration management
+  humanURL: https://knox.apache.org/books/knox-2-0-0/user-guide.html
+  tags:
+  - Providers
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-knox-providers-api-openapi.yml
+  - type: Documentation
+    url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
+  - type: X-NaftikoCapability
+    url: capabilities/admin-descriptors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/admin-providers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/admin-topologies.yaml
+- aid: apache-knox:apache-knox-topologies-api
+  name: Apache Knox Topologies API
+  description: Gateway topology management
+  humanURL: https://knox.apache.org/books/knox-2-0-0/user-guide.html
+  tags:
+  - Topologies
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-knox-topologies-api-openapi.yml
+  - type: Documentation
+    url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
+  - type: X-NaftikoCapability
+    url: capabilities/admin-descriptors.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/admin-providers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/admin-topologies.yaml
 common:
 - type: AgenticAccess
   url: agentic-access/apache-knox-agentic-access.yml
