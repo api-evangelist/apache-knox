@@ -1,0 +1,18 @@
+{
+  "provider": "apache-knox",
+  "sources": [
+    "apache-knox-descriptors-api-openapi.yml",
+    "apache-knox-providers-api-openapi.yml",
+    "apache-knox-topologies-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-knox-descriptors-api-openapi.yml",
+    "apache-knox-providers-api-openapi.yml",
+    "apache-knox-topologies-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
