@@ -57,12 +57,6 @@ apis:
     url: openapi/apache-knox-descriptors-api-openapi.yml
   - type: Documentation
     url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
-  - type: X-NaftikoCapability
-    url: capabilities/admin-descriptors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/admin-providers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/admin-topologies.yaml
 - aid: apache-knox:apache-knox-providers-api
   name: Apache Knox Providers API
   description: Provider configuration management
@@ -74,12 +68,6 @@ apis:
     url: openapi/apache-knox-providers-api-openapi.yml
   - type: Documentation
     url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
-  - type: X-NaftikoCapability
-    url: capabilities/admin-descriptors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/admin-providers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/admin-topologies.yaml
 - aid: apache-knox:apache-knox-topologies-api
   name: Apache Knox Topologies API
   description: Gateway topology management
@@ -91,13 +79,14 @@ apis:
     url: openapi/apache-knox-topologies-api-openapi.yml
   - type: Documentation
     url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
-  - type: X-NaftikoCapability
-    url: capabilities/admin-descriptors.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/admin-providers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/admin-topologies.yaml
 common:
+- type: SecurityPolicy
+  url: https://github.com/apache/knox/blob/master/SECURITY.md
+- type: CodeOfConduct
+  url: https://github.com/apache/.github/blob/main/.github/CODE_OF_CONDUCT.md
+- type: License
+  name: Apache-2.0
+  url: https://github.com/apache/knox/blob/master/LICENSE
 - type: AgenticAccess
   url: agentic-access/apache-knox-agentic-access.yml
 - type: VulnerabilityDisclosure
