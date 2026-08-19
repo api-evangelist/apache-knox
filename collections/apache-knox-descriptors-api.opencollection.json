@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Knox Admin REST Descriptors API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Descriptors",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache knox Apache Knox List Descriptors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://localhost:8443/gateway/admin/api/v1/descriptors"
+          },
+          "docs": "List all simple descriptors on the gateway."
+        },
+        {
+          "info": {
+            "name": "Apache knox Apache Knox Create Descriptor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://localhost:8443/gateway/admin/api/v1/descriptors",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new simple descriptor."
+        },
+        {
+          "info": {
+            "name": "Apache knox Apache Knox Get Descriptor",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://localhost:8443/gateway/admin/api/v1/descriptors/:descriptorName",
+            "params": [
+              {
+                "name": "descriptorName",
+                "value": "hadoop-cluster",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a specific simple descriptor."
+        },
+        {
+          "info": {
+            "name": "Apache knox Apache Knox Delete Descriptor",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://localhost:8443/gateway/admin/api/v1/descriptors/:descriptorName",
+            "params": [
+              {
+                "name": "descriptorName",
+                "value": "hadoop-cluster",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a simple descriptor."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

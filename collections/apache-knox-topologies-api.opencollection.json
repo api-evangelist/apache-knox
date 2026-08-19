@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Knox Admin REST Descriptors Topologies API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Topologies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache knox Apache Knox List Topologies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://localhost:8443/gateway/admin/api/v1/topologies"
+          },
+          "docs": "List all configured gateway topologies."
+        },
+        {
+          "info": {
+            "name": "Apache knox Apache Knox Create Topology",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://localhost:8443/gateway/admin/api/v1/topologies",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create or update a gateway topology."
+        },
+        {
+          "info": {
+            "name": "Apache knox Apache Knox Get Topology",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://localhost:8443/gateway/admin/api/v1/topologies/:topologyName",
+            "params": [
+              {
+                "name": "topologyName",
+                "value": "sandbox",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get details of a specific topology."
+        },
+        {
+          "info": {
+            "name": "Apache knox Apache Knox Delete Topology",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://localhost:8443/gateway/admin/api/v1/topologies/:topologyName",
+            "params": [
+              {
+                "name": "topologyName",
+                "value": "sandbox",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a gateway topology."
+        },
+        {
+          "info": {
+            "name": "Apache knox Apache Knox Get Topology URLs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://localhost:8443/gateway/admin/api/v1/topologies/:topologyName/urls",
+            "params": [
+              {
+                "name": "topologyName",
+                "value": "sandbox",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get all service URLs for a topology."
+        },
+        {
+          "info": {
+            "name": "Apache knox Apache Knox Get Version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://localhost:8443/gateway/admin/api/v1/version"
+          },
+          "docs": "Get the Knox gateway version information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
