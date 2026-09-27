@@ -39,7 +39,7 @@ tags:
 - API Gateway
 - Authentication
 - Hadoop
-- Open-Source
+- Open Source
 - Security
 - SSO
 tags_raw:
@@ -49,6 +49,7 @@ tags_raw:
 - Open Source
 - Security
 - SSO
+- Open-Source
 created: '2026-03-16'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-knox/refs/heads/main/apis.yml

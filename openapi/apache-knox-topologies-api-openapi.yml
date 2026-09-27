@@ -188,17 +188,6 @@ components:
           type: string
           description: Build hash
           example: abc123def
-    TopologyList:
-      type: object
-      description: List of Knox topologies
-      properties:
-        topologies:
-          type: object
-          properties:
-            topology:
-              type: array
-              items:
-                $ref: '#/components/schemas/Topology'
     Topology:
       type: object
       description: A Knox gateway topology
@@ -215,6 +204,17 @@ components:
           type: integer
           description: Last modified timestamp
           example: 1718153645993
+    TopologyList:
+      type: object
+      description: List of Knox topologies
+      properties:
+        topologies:
+          type: object
+          properties:
+            topology:
+              type: array
+              items:
+                $ref: '#/components/schemas/Topology'
   securitySchemes:
     basicAuth:
       type: http
