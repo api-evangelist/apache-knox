@@ -110,6 +110,14 @@ paths:
           description: Descriptor deleted
 components:
   schemas:
+    DescriptorList:
+      type: object
+      description: List of simple descriptors
+      properties:
+        descriptors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Descriptor'
     Descriptor:
       type: object
       description: A Knox simple descriptor
@@ -139,14 +147,6 @@ components:
           description: Services exposed by this descriptor
           items:
             type: object
-    DescriptorList:
-      type: object
-      description: List of simple descriptors
-      properties:
-        descriptors:
-          type: array
-          items:
-            $ref: '#/components/schemas/Descriptor'
   securitySchemes:
     basicAuth:
       type: http
