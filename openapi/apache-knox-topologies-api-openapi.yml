@@ -187,6 +187,18 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Topology'
+    KnoxVersion:
+      type: object
+      description: Knox gateway version information
+      properties:
+        version:
+          type: string
+          description: Knox version string
+          example: 2.0.0
+        hash:
+          type: string
+          description: Build hash
+          example: abc123def
     Topology:
       type: object
       description: A Knox gateway topology
@@ -203,18 +215,6 @@ components:
           type: integer
           description: Last modified timestamp
           example: 1718153645993
-    KnoxVersion:
-      type: object
-      description: Knox gateway version information
-      properties:
-        version:
-          type: string
-          description: Knox version string
-          example: 2.0.0
-        hash:
-          type: string
-          description: Build hash
-          example: abc123def
   securitySchemes:
     basicAuth:
       type: http
