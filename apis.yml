@@ -103,6 +103,12 @@ apis:
   - type: Documentation
     url: https://knox.apache.org/books/knox-2-0-0/user-guide.html
 common:
+- type: Plans
+  url: plans/apache-knox-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/apache-knox-rate-limits.yml
+- type: FinOps
+  url: finops/apache-knox-finops.yml
 - type: Website
   url: https://www.apache.org/
 - type: SecurityPolicy
