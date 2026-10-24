@@ -1,190 +1,196 @@
 {
+  "info": {
+    "_postman_id": "93372ac4-3361-47ed-9e89-165b0a53fedf",
+    "name": "Apache Knox Admin REST Providers API",
+    "description": "REST API for Apache Knox gateway administration including topology management, service discovery, token management, and audit operations.\n\nContact Support:\n Email: user@knox.apache.org",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:58:57.000Z",
+    "updatedAt": "2026-10-22T02:58:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-93372ac4-3361-47ed-9e89-165b0a53fedf"
+  },
   "item": [
     {
-      "id": "54f5a152-4906-45d5-86d9-0b94d7a8c4e5",
-      "name": "Providers",
-      "description": {
-        "content": "Provider configuration management",
-        "type": "text/plain"
-      },
+      "name": "api",
       "item": [
         {
-          "id": "056f8fc1-0f7e-4a40-b6c1-3feb4917bd8f",
-          "name": "Apache knox Apache Knox List Provider Configs",
-          "request": {
-            "name": "Apache knox Apache Knox List Provider Configs",
-            "description": {
-              "content": "List all provider configurations.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "providerconfig"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "v1",
+          "item": [
             {
-              "id": "3a43a88d-defa-4b73-8f78-a843c2bfd297",
-              "name": "List of provider configurations",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "providerconfig"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "name": "providerconfig",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "2ddb0d54-33d7-42d9-9f36-715da36dcfa1",
-          "name": "Apache knox Apache Knox Create Provider Config",
-          "request": {
-            "name": "Apache knox Apache Knox Create Provider Config",
-            "description": {
-              "content": "Create a new provider configuration.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "providerconfig"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "<object>",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "052b1faa-b8dd-43bc-b658-a1454263b4f0",
-              "name": "Provider config created",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "providerconfig"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
+                  "name": "Apache knox Apache Knox List Provider Configs",
+                  "id": "cf625ff9-ee39-40ef-8d6c-e0c72de661e6",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/providerconfig",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "providerconfig"
+                      ]
                     },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
+                    "description": "List all provider configurations."
+                  },
+                  "response": [
+                    {
+                      "id": "8f5afb88-5442-45c6-a409-6f2ab48deb59",
+                      "name": "List of provider configurations",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/providerconfig",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "providerconfig"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-10-22T02:58:57.000Z",
+                      "updatedAt": "2026-10-22T02:58:57.000Z",
+                      "uid": "35240-8f5afb88-5442-45c6-a409-6f2ab48deb59"
                     }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
+                  ],
+                  "createdAt": "2026-10-22T02:58:57.000Z",
+                  "updatedAt": "2026-10-22T02:58:57.000Z",
+                  "uid": "35240-cf625ff9-ee39-40ef-8d6c-e0c72de661e6"
+                },
                 {
-                  "key": "Content-Type",
-                  "value": "text/plain"
+                  "name": "Apache knox Apache Knox Create Provider Config",
+                  "id": "31c0568e-0591-4b2a-bf8c-0fe7ac854a2f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/providerconfig",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "providerconfig"
+                      ]
+                    },
+                    "description": "Create a new provider configuration."
+                  },
+                  "response": [
+                    {
+                      "id": "71270313-6878-487c-b9de-a38e5c2cccb4",
+                      "name": "Provider config created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/providerconfig",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "providerconfig"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-10-22T02:58:57.000Z",
+                      "updatedAt": "2026-10-22T02:58:57.000Z",
+                      "uid": "35240-71270313-6878-487c-b9de-a38e5c2cccb4"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:58:57.000Z",
+                  "updatedAt": "2026-10-22T02:58:57.000Z",
+                  "uid": "35240-31c0568e-0591-4b2a-bf8c-0fe7ac854a2f"
                 }
               ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
+              "id": "01e288f8-b1b4-40bf-82ca-6bf1312960f9",
+              "createdAt": "2026-10-22T02:58:57.000Z",
+              "updatedAt": "2026-10-22T02:58:57.000Z",
+              "uid": "35240-01e288f8-b1b4-40bf-82ca-6bf1312960f9"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "00ead01c-6a1f-40e0-97f9-66de884e9744",
+          "createdAt": "2026-10-22T02:58:57.000Z",
+          "updatedAt": "2026-10-22T02:58:57.000Z",
+          "uid": "35240-00ead01c-6a1f-40e0-97f9-66de884e9744"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://localhost:8443/gateway/admin",
-      "key": "baseUrl"
+      "id": "875bed62-b80c-4683-afe7-4ceaed831fc8",
+      "createdAt": "2026-10-22T02:58:57.000Z",
+      "updatedAt": "2026-10-22T02:58:57.000Z",
+      "uid": "35240-875bed62-b80c-4683-afe7-4ceaed831fc8"
     }
   ],
   "auth": {
@@ -192,21 +198,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "41e68ae7-3ff8-4270-a8fd-a604c76cde9d",
-    "name": "Apache Knox Admin REST Descriptors Providers API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "REST API for Apache Knox gateway administration including topology management, service discovery, token management, and audit operations.\n\nContact Support:\n Email: user@knox.apache.org",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:8443/gateway/admin"
     }
-  }
+  ]
 }

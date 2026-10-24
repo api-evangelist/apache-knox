@@ -1,380 +1,375 @@
 {
+  "info": {
+    "_postman_id": "a885f3cf-7079-4092-a15c-7e678629e45f",
+    "name": "Apache Knox Admin REST Descriptors API",
+    "description": "REST API for Apache Knox gateway administration including topology management, service discovery, token management, and audit operations.\n\nContact Support:\n Email: user@knox.apache.org",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:58:45.000Z",
+    "updatedAt": "2026-10-22T02:58:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a885f3cf-7079-4092-a15c-7e678629e45f"
+  },
   "item": [
     {
-      "id": "46f10c48-d442-481b-ad4d-7de2a9eea0df",
-      "name": "Descriptors",
-      "description": {
-        "content": "Simple descriptor management",
-        "type": "text/plain"
-      },
+      "name": "api",
       "item": [
         {
-          "id": "dc7101c7-04fc-4ab8-b8bd-6b87d4e086fa",
-          "name": "Apache knox Apache Knox List Descriptors",
-          "request": {
-            "name": "Apache knox Apache Knox List Descriptors",
-            "description": {
-              "content": "List all simple descriptors on the gateway.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "descriptors"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "v1",
+          "item": [
             {
-              "id": "71dd1ba6-76af-43f3-90e7-4825cb5db370",
-              "name": "List of descriptors",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "descriptors"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
+              "name": "descriptors",
+              "item": [
+                {
+                  "name": "{descriptorName}",
+                  "item": [
+                    {
+                      "name": "Apache knox Apache Knox Get Descriptor",
+                      "id": "7d09fdf2-d04f-488f-ac5c-258b04cc23dd",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/descriptors/:descriptorName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "descriptors",
+                            ":descriptorName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "84197be2-2c35-4a63-a7b0-37b0dff1a2e6",
+                              "key": "descriptorName",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Get a specific simple descriptor."
+                      },
+                      "response": [
+                        {
+                          "id": "bc94b6b0-7c2b-4549-a6d0-82ef7b32eb77",
+                          "name": "Descriptor details",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/descriptors/:descriptorName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "descriptors",
+                                ":descriptorName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "descriptorName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-10-22T02:58:46.000Z",
+                          "updatedAt": "2026-10-22T02:58:46.000Z",
+                          "uid": "35240-bc94b6b0-7c2b-4549-a6d0-82ef7b32eb77"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:58:46.000Z",
+                      "updatedAt": "2026-10-22T02:58:46.000Z",
+                      "uid": "35240-7d09fdf2-d04f-488f-ac5c-258b04cc23dd"
                     },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
+                    {
+                      "name": "Apache knox Apache Knox Delete Descriptor",
+                      "id": "fe911ee2-b518-48cb-b45e-1bb7dcf6b559",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/descriptors/:descriptorName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "descriptors",
+                            ":descriptorName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f3f7fb03-8f8b-4c57-a5d8-7c9ce7dcf147",
+                              "key": "descriptorName",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Delete a simple descriptor."
+                      },
+                      "response": [
+                        {
+                          "id": "b57a4761-5d35-4a15-a18d-dc59e1d9c926",
+                          "name": "Descriptor deleted",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/descriptors/:descriptorName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "descriptors",
+                                ":descriptorName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "descriptorName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-10-22T02:58:46.000Z",
+                          "updatedAt": "2026-10-22T02:58:46.000Z",
+                          "uid": "35240-b57a4761-5d35-4a15-a18d-dc59e1d9c926"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:58:46.000Z",
+                      "updatedAt": "2026-10-22T02:58:46.000Z",
+                      "uid": "35240-fe911ee2-b518-48cb-b45e-1bb7dcf6b559"
+                    }
+                  ],
+                  "id": "470df7cb-6998-4e14-928e-fccb57d12aeb",
+                  "createdAt": "2026-10-22T02:58:46.000Z",
+                  "updatedAt": "2026-10-22T02:58:46.000Z",
+                  "uid": "35240-470df7cb-6998-4e14-928e-fccb57d12aeb"
+                },
+                {
+                  "name": "Apache knox Apache Knox List Descriptors",
+                  "id": "9684b6bf-563a-437f-9bea-8d9e1892c666",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
                   },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"descriptors\": []\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "595256f9-abaa-4a77-85be-67a130789de5",
-          "name": "Apache knox Apache Knox Create Descriptor",
-          "request": {
-            "name": "Apache knox Apache Knox Create Descriptor",
-            "description": {
-              "content": "Create a new simple descriptor.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "descriptors"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"<string>\",\n  \"discoveryType\": \"<string>\",\n  \"discoveryAddress\": \"<string>\",\n  \"cluster\": \"<string>\",\n  \"providerConfig\": \"<string>\",\n  \"services\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "68006c82-30d5-4679-9079-4fd8ce1d086f",
-              "name": "Descriptor created",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "descriptors"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/descriptors",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "descriptors"
+                      ]
                     },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"name\": \"hadoop-cluster\",\n  \"discoveryType\": \"Ambari\",\n  \"discoveryAddress\": \"http://ambari:8080\",\n  \"cluster\": \"my-cluster\",\n  \"providerConfig\": \"my-provider-config\",\n  \"services\": []\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "807cd58a-03e8-42cc-90fd-96991e60b2a2",
-          "name": "Apache knox Apache Knox Get Descriptor",
-          "request": {
-            "name": "Apache knox Apache Knox Get Descriptor",
-            "description": {
-              "content": "Get a specific simple descriptor.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "descriptors",
-                ":descriptorName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "descriptorName",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "1e01c7a4-e9e3-4581-9b90-1a098ab4819e",
-              "name": "Descriptor details",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "descriptors",
-                    ":descriptorName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
+                    "description": "List all simple descriptors on the gateway."
+                  },
+                  "response": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "descriptorName",
-                      "description": "(Required) "
+                      "id": "23acd032-aea5-45e6-b400-6c582968a43e",
+                      "name": "List of descriptors",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/descriptors",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "descriptors"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"descriptors\": [\n    {\n      \"name\": \"<string>\",\n      \"discoveryType\": \"<string>\",\n      \"discoveryAddress\": \"<string>\",\n      \"cluster\": \"<string>\",\n      \"providerConfig\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"discoveryType\": \"<string>\",\n      \"discoveryAddress\": \"<string>\",\n      \"cluster\": \"<string>\",\n      \"providerConfig\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-10-22T02:58:46.000Z",
+                      "updatedAt": "2026-10-22T02:58:46.000Z",
+                      "uid": "35240-23acd032-aea5-45e6-b400-6c582968a43e"
                     }
-                  ]
+                  ],
+                  "createdAt": "2026-10-22T02:58:46.000Z",
+                  "updatedAt": "2026-10-22T02:58:46.000Z",
+                  "uid": "35240-9684b6bf-563a-437f-9bea-8d9e1892c666"
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
+                {
+                  "name": "Apache knox Apache Knox Create Descriptor",
+                  "id": "f600a7f0-2ae4-4f2e-a379-71bcd3cf11d4",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"discoveryType\": \"<string>\",\n  \"discoveryAddress\": \"<string>\",\n  \"cluster\": \"<string>\",\n  \"providerConfig\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
                     },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "af1e43b0-6d14-4834-aa89-6ddaf3f5368d",
-          "name": "Apache knox Apache Knox Delete Descriptor",
-          "request": {
-            "name": "Apache knox Apache Knox Delete Descriptor",
-            "description": {
-              "content": "Delete a simple descriptor.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "descriptors",
-                ":descriptorName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "descriptorName",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "method": "DELETE",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "6a7a0750-5126-4bda-84a2-11f82e243cb8",
-              "name": "Descriptor deleted",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "descriptors",
-                    ":descriptorName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/descriptors",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "descriptors"
+                      ]
+                    },
+                    "description": "Create a new simple descriptor."
+                  },
+                  "response": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "descriptorName",
-                      "description": "(Required) "
+                      "id": "04bcc6ad-e461-4cb8-bf98-9c376fdffd54",
+                      "name": "Descriptor created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"discoveryType\": \"<string>\",\n  \"discoveryAddress\": \"<string>\",\n  \"cluster\": \"<string>\",\n  \"providerConfig\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/descriptors",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "descriptors"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-10-22T02:58:46.000Z",
+                      "updatedAt": "2026-10-22T02:58:46.000Z",
+                      "uid": "35240-04bcc6ad-e461-4cb8-bf98-9c376fdffd54"
                     }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
+                  ],
+                  "createdAt": "2026-10-22T02:58:46.000Z",
+                  "updatedAt": "2026-10-22T02:58:46.000Z",
+                  "uid": "35240-f600a7f0-2ae4-4f2e-a379-71bcd3cf11d4"
                 }
               ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
+              "id": "c98212bf-e6d3-4856-83dc-36f6eb4a09fa",
+              "createdAt": "2026-10-22T02:58:46.000Z",
+              "updatedAt": "2026-10-22T02:58:46.000Z",
+              "uid": "35240-c98212bf-e6d3-4856-83dc-36f6eb4a09fa"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "0cfe43ea-34b2-4bbe-851c-9a9d689e90b0",
+          "createdAt": "2026-10-22T02:58:46.000Z",
+          "updatedAt": "2026-10-22T02:58:46.000Z",
+          "uid": "35240-0cfe43ea-34b2-4bbe-851c-9a9d689e90b0"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://localhost:8443/gateway/admin",
-      "key": "baseUrl"
+      "id": "ebab5d25-e7e7-4de9-9202-cdcefc8adbdc",
+      "createdAt": "2026-10-22T02:58:46.000Z",
+      "updatedAt": "2026-10-22T02:58:46.000Z",
+      "uid": "35240-ebab5d25-e7e7-4de9-9202-cdcefc8adbdc"
     }
   ],
   "auth": {
@@ -382,21 +377,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "a2a52677-9299-4556-af78-98ce095b3c7c",
-    "name": "Apache Knox Admin REST Descriptors API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "REST API for Apache Knox gateway administration including topology management, service discovery, token management, and audit operations.\n\nContact Support:\n Email: user@knox.apache.org",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:8443/gateway/admin"
     }
-  }
+  ]
 }

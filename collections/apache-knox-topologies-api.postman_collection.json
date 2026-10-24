@@ -1,624 +1,619 @@
 {
+  "info": {
+    "_postman_id": "51b7bae6-a336-4639-a149-46b0469976ea",
+    "name": "Apache Knox Admin REST Topologies API",
+    "description": "REST API for Apache Knox gateway administration including topology management, service discovery, token management, and audit operations.\n\nContact Support:\n Email: user@knox.apache.org",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:59:02.000Z",
+    "updatedAt": "2026-10-22T02:59:03.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-51b7bae6-a336-4639-a149-46b0469976ea"
+  },
   "item": [
     {
-      "id": "4a5ebb03-f80a-4c88-88ba-9862a9d6d141",
-      "name": "Topologies",
-      "description": {
-        "content": "Gateway topology management",
-        "type": "text/plain"
-      },
+      "name": "api",
       "item": [
         {
-          "id": "e5643b47-e61d-4fe1-8f80-c31d54951475",
-          "name": "Apache knox Apache Knox List Topologies",
-          "request": {
-            "name": "Apache knox Apache Knox List Topologies",
-            "description": {
-              "content": "List all configured gateway topologies.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "topologies"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "v1",
+          "item": [
             {
-              "id": "a4c50a10-236f-4484-8555-be4d94802552",
-              "name": "List of topologies",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "topologies"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "name": "topologies",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"topologies\": {}\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "84d2c690-e091-4669-8386-a7e5e799554f",
-          "name": "Apache knox Apache Knox Create Topology",
-          "request": {
-            "name": "Apache knox Apache Knox Create Topology",
-            "description": {
-              "content": "Create or update a gateway topology.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "topologies"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"<string>\",\n  \"uri\": \"<string>\",\n  \"timestamp\": \"<integer>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "247678a3-a1b6-49fd-98fb-dd06eeefe33f",
-              "name": "Topology created or updated",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "topologies"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"name\": \"sandbox\",\n  \"uri\": \"https://localhost:8443/gateway/sandbox\",\n  \"timestamp\": 1718153645993\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "8794652c-0d8d-4ebe-b9db-10bf48fd4789",
-          "name": "Apache knox Apache Knox Get Topology",
-          "request": {
-            "name": "Apache knox Apache Knox Get Topology",
-            "description": {
-              "content": "Get details of a specific topology.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "topologies",
-                ":topologyName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "topologyName",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "7914a847-440d-4779-930e-826277e5ced0",
-              "name": "Topology details",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "topologies",
-                    ":topologyName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
+                  "name": "{topologyName}",
+                  "item": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "topologyName",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
+                      "name": "urls",
+                      "item": [
+                        {
+                          "name": "Apache knox Apache Knox Get Topology URLs",
+                          "id": "d2550a39-0191-4bdf-a423-ada19b89acaa",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/topologies/:topologyName/urls",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "topologies",
+                                ":topologyName",
+                                "urls"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "f228eab7-c39f-4f07-b70a-70757232e700",
+                                  "key": "topologyName",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Get all service URLs for a topology."
+                          },
+                          "response": [
+                            {
+                              "id": "da602937-ea37-4289-b1bf-e21326c969f5",
+                              "name": "Topology service URLs",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v1/topologies/:topologyName/urls",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v1",
+                                    "topologies",
+                                    ":topologyName",
+                                    "urls"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "topologyName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "[\n  \"<string>\",\n  \"<string>\"\n]",
+                              "createdAt": "2026-10-22T02:59:03.000Z",
+                              "updatedAt": "2026-10-22T02:59:03.000Z",
+                              "uid": "35240-da602937-ea37-4289-b1bf-e21326c969f5"
+                            }
+                          ],
+                          "createdAt": "2026-10-22T02:59:03.000Z",
+                          "updatedAt": "2026-10-22T02:59:03.000Z",
+                          "uid": "35240-d2550a39-0191-4bdf-a423-ada19b89acaa"
+                        }
+                      ],
+                      "id": "b1e161aa-3c99-4cbd-b333-aba81ebeb8ee",
+                      "createdAt": "2026-10-22T02:59:03.000Z",
+                      "updatedAt": "2026-10-22T02:59:03.000Z",
+                      "uid": "35240-b1e161aa-3c99-4cbd-b333-aba81ebeb8ee"
                     },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"name\": \"sandbox\",\n  \"uri\": \"https://localhost:8443/gateway/sandbox\",\n  \"timestamp\": 1718153645993\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "4856cd63-951b-46fd-bee3-e5eae7752222",
-              "name": "Topology not found",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "topologies",
-                    ":topologyName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "topologyName",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
+                      "name": "Apache knox Apache Knox Get Topology",
+                      "id": "8bb394cc-2328-481b-b10e-421eba20980c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/topologies/:topologyName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "topologies",
+                            ":topologyName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "597b4078-dc1e-488d-acac-2994237660f2",
+                              "key": "topologyName",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Get details of a specific topology."
+                      },
+                      "response": [
+                        {
+                          "id": "6cb6fc73-34eb-401c-953f-ff24de92cb2c",
+                          "name": "Topology details",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/topologies/:topologyName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "topologies",
+                                ":topologyName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "topologyName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"uri\": \"<string>\",\n  \"timestamp\": \"<integer>\"\n}",
+                          "createdAt": "2026-10-22T02:59:03.000Z",
+                          "updatedAt": "2026-10-22T02:59:03.000Z",
+                          "uid": "35240-6cb6fc73-34eb-401c-953f-ff24de92cb2c"
+                        },
+                        {
+                          "id": "1a714d02-6a6f-4cb6-b1e7-fff9af1b3a64",
+                          "name": "Topology not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/topologies/:topologyName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "topologies",
+                                ":topologyName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "topologyName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-10-22T02:59:03.000Z",
+                          "updatedAt": "2026-10-22T02:59:03.000Z",
+                          "uid": "35240-1a714d02-6a6f-4cb6-b1e7-fff9af1b3a64"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:59:03.000Z",
+                      "updatedAt": "2026-10-22T02:59:03.000Z",
+                      "uid": "35240-8bb394cc-2328-481b-b10e-421eba20980c"
                     },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Not Found",
-              "code": 404,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "82a28dc1-e264-4011-bcdb-ceaa0093f982",
-          "name": "Apache knox Apache Knox Delete Topology",
-          "request": {
-            "name": "Apache knox Apache Knox Delete Topology",
-            "description": {
-              "content": "Delete a gateway topology.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "topologies",
-                ":topologyName"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "topologyName",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "method": "DELETE",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "1eb637b7-206f-4b47-9a22-79ecbc974e85",
-              "name": "Topology deleted",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "topologies",
-                    ":topologyName"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "topologyName",
-                      "description": "(Required) "
+                      "name": "Apache knox Apache Knox Delete Topology",
+                      "id": "317bb22f-58a4-4d20-ad4b-2ab86f073a5c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/topologies/:topologyName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "topologies",
+                            ":topologyName"
+                          ],
+                          "variable": [
+                            {
+                              "id": "508b783f-c424-4106-a88b-8e5a84e93e4c",
+                              "key": "topologyName",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Delete a gateway topology."
+                      },
+                      "response": [
+                        {
+                          "id": "38055064-d548-4866-815f-f13ffea4936c",
+                          "name": "Topology deleted",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/topologies/:topologyName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "topologies",
+                                ":topologyName"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "topologyName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-10-22T02:59:03.000Z",
+                          "updatedAt": "2026-10-22T02:59:03.000Z",
+                          "uid": "35240-38055064-d548-4866-815f-f13ffea4936c"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:59:03.000Z",
+                      "updatedAt": "2026-10-22T02:59:03.000Z",
+                      "uid": "35240-317bb22f-58a4-4d20-ad4b-2ab86f073a5c"
                     }
-                  ]
+                  ],
+                  "id": "4e1dd53a-bf1d-4566-9950-b64e57cfe263",
+                  "createdAt": "2026-10-22T02:59:03.000Z",
+                  "updatedAt": "2026-10-22T02:59:03.000Z",
+                  "uid": "35240-4e1dd53a-bf1d-4566-9950-b64e57cfe263"
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
+                {
+                  "name": "Apache knox Apache Knox List Topologies",
+                  "id": "c99d9e50-fefa-4baa-97e4-3454f9109b78",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/topologies",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "topologies"
+                      ]
                     },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "efd88606-56b7-40f4-a488-5586de8427f3",
-          "name": "Apache knox Apache Knox Get Topology URLs",
-          "request": {
-            "name": "Apache knox Apache Knox Get Topology URLs",
-            "description": {
-              "content": "Get all service URLs for a topology.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "topologies",
-                ":topologyName",
-                "urls"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "topologyName",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "7b2764f7-ca59-4baa-81aa-774536096195",
-              "name": "Topology service URLs",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "topologies",
-                    ":topologyName",
-                    "urls"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
+                    "description": "List all configured gateway topologies."
+                  },
+                  "response": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "topologyName",
-                      "description": "(Required) "
+                      "id": "acf9e5af-d102-4233-9740-93a8892ad367",
+                      "name": "List of topologies",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/topologies",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "topologies"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"topologies\": {\n    \"topology\": [\n      {\n        \"name\": \"<string>\",\n        \"uri\": \"<string>\",\n        \"timestamp\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"uri\": \"<string>\",\n        \"timestamp\": \"<integer>\"\n      }\n    ]\n  }\n}",
+                      "createdAt": "2026-10-22T02:59:03.000Z",
+                      "updatedAt": "2026-10-22T02:59:03.000Z",
+                      "uid": "35240-acf9e5af-d102-4233-9740-93a8892ad367"
                     }
-                  ]
+                  ],
+                  "createdAt": "2026-10-22T02:59:03.000Z",
+                  "updatedAt": "2026-10-22T02:59:03.000Z",
+                  "uid": "35240-c99d9e50-fefa-4baa-97e4-3454f9109b78"
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "name": "Apache knox Apache Knox Create Topology",
+                  "id": "9122d91b-79e3-4697-b1ac-92c2f9329be5",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"uri\": \"<string>\",\n  \"timestamp\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/topologies",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "topologies"
+                      ]
+                    },
+                    "description": "Create or update a gateway topology."
+                  },
+                  "response": [
+                    {
+                      "id": "dc164ea3-d6d1-4a2d-ac1d-17c536373bcb",
+                      "name": "Topology created or updated",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"uri\": \"<string>\",\n  \"timestamp\": \"<integer>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/topologies",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "topologies"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-10-22T02:59:03.000Z",
+                      "updatedAt": "2026-10-22T02:59:03.000Z",
+                      "uid": "35240-dc164ea3-d6d1-4a2d-ac1d-17c536373bcb"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:59:03.000Z",
+                  "updatedAt": "2026-10-22T02:59:03.000Z",
+                  "uid": "35240-9122d91b-79e3-4697-b1ac-92c2f9329be5"
                 }
               ],
-              "body": "{}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "692f944f-0e8b-40eb-a051-db3e89b27437",
-          "name": "Apache knox Apache Knox Get Version",
-          "request": {
-            "name": "Apache knox Apache Knox Get Version",
-            "description": {
-              "content": "Get the Knox gateway version information.",
-              "type": "text/plain"
+              "id": "79b61f2b-c949-4a3b-a007-d7ed26144919",
+              "createdAt": "2026-10-22T02:59:03.000Z",
+              "updatedAt": "2026-10-22T02:59:03.000Z",
+              "uid": "35240-79b61f2b-c949-4a3b-a007-d7ed26144919"
             },
-            "url": {
-              "path": [
-                "api",
-                "v1",
-                "version"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
             {
-              "id": "0dc98895-79e6-4c72-9641-906c5ace8348",
-              "name": "Knox version",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "api",
-                    "v1",
-                    "version"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "name": "version",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "name": "Apache knox Apache Knox Get Version",
+                  "id": "89c6e253-7d00-499d-83ae-e67356f6f1fd",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/version",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "version"
+                      ]
+                    },
+                    "description": "Get the Knox gateway version information."
+                  },
+                  "response": [
+                    {
+                      "id": "37356858-61f1-453a-8c40-68324f1287a2",
+                      "name": "Knox version",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/version",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "version"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"version\": \"<string>\",\n  \"hash\": \"<string>\"\n}",
+                      "createdAt": "2026-10-22T02:59:03.000Z",
+                      "updatedAt": "2026-10-22T02:59:03.000Z",
+                      "uid": "35240-37356858-61f1-453a-8c40-68324f1287a2"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:59:03.000Z",
+                  "updatedAt": "2026-10-22T02:59:03.000Z",
+                  "uid": "35240-89c6e253-7d00-499d-83ae-e67356f6f1fd"
                 }
               ],
-              "body": "{\n  \"version\": \"2.0.0\",\n  \"hash\": \"abc123def\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "9651115c-8935-4ad8-944e-7650bd1fb9f8",
+              "createdAt": "2026-10-22T02:59:03.000Z",
+              "updatedAt": "2026-10-22T02:59:03.000Z",
+              "uid": "35240-9651115c-8935-4ad8-944e-7650bd1fb9f8"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "8e20be7d-3075-49e5-aa17-d3a456e0811d",
+          "createdAt": "2026-10-22T02:59:03.000Z",
+          "updatedAt": "2026-10-22T02:59:03.000Z",
+          "uid": "35240-8e20be7d-3075-49e5-aa17-d3a456e0811d"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://localhost:8443/gateway/admin",
-      "key": "baseUrl"
+      "id": "065b3d4e-7ebb-44b0-ae4a-b95f6680c99c",
+      "createdAt": "2026-10-22T02:59:03.000Z",
+      "updatedAt": "2026-10-22T02:59:03.000Z",
+      "uid": "35240-065b3d4e-7ebb-44b0-ae4a-b95f6680c99c"
     }
   ],
   "auth": {
@@ -626,21 +621,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "b24f8201-8948-4007-b26c-7590b6f2b46f",
-    "name": "Apache Knox Admin REST Descriptors Topologies API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "REST API for Apache Knox gateway administration including topology management, service discovery, token management, and audit operations.\n\nContact Support:\n Email: user@knox.apache.org",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:8443/gateway/admin"
     }
-  }
+  ]
 }

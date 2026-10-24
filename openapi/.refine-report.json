@@ -1,24 +1,19 @@
 {
   "provider": "apache-knox",
   "sources": [
-    "_original/apache-knox-admin-api.yaml"
+    "_original/apache-knox-openapi.json"
   ],
   "outputs": [
-    "apache-knox-descriptors-api-openapi.yml",
-    "apache-knox-providers-api-openapi.yml",
-    "apache-knox-topologies-api-openapi.yml"
+    "apache-knox-queues-api-openapi.yml",
+    "apache-knox-status-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "apache-knox-admin-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "apache-knox-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+2 apis, 3 total)"
   ],
-  "skipped": [
-    "apache-knox-descriptors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "apache-knox-providers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "apache-knox-topologies-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }
