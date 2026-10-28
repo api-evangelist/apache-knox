@@ -1,4 +1,4 @@
-# Apache Knox (apache-knox)
+# Apache Knox
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,137 +64,175 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Apache Knox is a REST API and application gateway for the Apache Hadoop ecosystem. It provides a single access point for all REST and HTTP interactions with Apache Hadoop clusters, with authentication, authorization, SSO, and audit capabilities.
+Apache Knox is a REST API and application gateway for the Apache Hadoop ecosystem. It provides a single access point for all REST and HTTP interactions with Apache Hadoop clusters, with authentication, authorization, SSO, and audit capabilities. Governed by the Apache Software Foundation under Apache 2.0.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/apache-knox/refs/heads/main/apis.yml)
+**Areas:** API Gateway · Authentication · Hadoop · Open Source · Security · SSO
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache Knox on APIs.io
 
-## Tags:
+Everything profiled for Apache Knox is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-knox/](https://apis.io/providers/apache-knox/)** — or go straight to one of the APIs or properties below.
 
- - API Gateway, Authentication, Hadoop, Open Source, Security, SSO
+### APIs (4)
 
-## Timestamps
+- [Apache Knox Gateway API](https://apis.io/apis/apache-knox/gateway-api/) — The Knox gateway proxies and secures access to Hadoop ecosystem services including HDFS WebHDFS, Hive, HBase REST, YARN, Oozie, Ambari, and Ranger with…
+- [Apache Knox Descriptors API](https://apis.io/apis/apache-knox/apache-knox-descriptors-api/) — Simple descriptor management
+- [Apache Knox Providers API](https://apis.io/apis/apache-knox/apache-knox-providers-api/) — Provider configuration management
+- [Apache Knox Topologies API](https://apis.io/apis/apache-knox/apache-knox-topologies-api/) — Gateway topology management
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache Knox Admin REST API
-The Knox Admin REST API provides endpoints for topology management, service descriptor management, provider configuration, and version information.
+#### Agentic access (1)
 
-**Human URL:** [https://knox.apache.org/books/knox-2-0-0/user-guide.html](https://knox.apache.org/books/knox-2-0-0/user-guide.html)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Apache Knox Agentic Access](https://apis.io/agentic-access/apache-knox/apache-knox-agentic-access/)
 
- - Administration, API Gateway, REST
+#### JSON Schema (5)
 
-#### Properties
+The data models the API reads and writes.
 
+- [Descriptor](https://apis.io/schemas/apache-knox/admin-api-descriptor/)
+- [DescriptorList](https://apis.io/schemas/apache-knox/admin-api-descriptor-list/)
+- [KnoxVersion](https://apis.io/schemas/apache-knox/admin-api-knox-version/)
+- [Topology](https://apis.io/schemas/apache-knox/admin-api-topology/)
+- [TopologyList](https://apis.io/schemas/apache-knox/admin-api-topology-list/)
+
+#### JSON Structure (5)
+
+Data models expressed in JSON Structure.
+
+- [Admin Api Descriptor List Structure](https://apis.io/json-structure/apache-knox/admin-api-descriptor-list-structure/)
+- [Admin Api Descriptor Structure](https://apis.io/json-structure/apache-knox/admin-api-descriptor-structure/)
+- [Admin Api Knox Version Structure](https://apis.io/json-structure/apache-knox/admin-api-knox-version-structure/)
+- [Admin Api Topology List Structure](https://apis.io/json-structure/apache-knox/admin-api-topology-list-structure/)
+- [Admin Api Topology Structure](https://apis.io/json-structure/apache-knox/admin-api-topology-structure/)
+
+#### JSON-LD (3)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apache Knox Admin Api Descriptor Context](https://apis.io/jsonld/apache-knox/apache-knox-admin-api-descriptor-context/)
+- [Apache Knox Admin Api Knox Context](https://apis.io/jsonld/apache-knox/apache-knox-admin-api-knox-context/)
+- [Apache Knox Admin Api Topology Context](https://apis.io/jsonld/apache-knox/apache-knox-admin-api-topology-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apache Knox Vocabulary](https://apis.io/vocabularies/apache-knox/apache-knox-vocabulary/)
+
+#### Examples (5)
+
+Example requests and responses.
+
+- [Admin Api Descriptor Example](https://apis.io/examples/apache-knox/admin-api-descriptor-example/)
+- [Admin Api Descriptor List Example](https://apis.io/examples/apache-knox/admin-api-descriptor-list-example/)
+- [Admin Api Knox Version Example](https://apis.io/examples/apache-knox/admin-api-knox-version-example/)
+- [Admin Api Topology Example](https://apis.io/examples/apache-knox/admin-api-topology-example/)
+- [Admin Api Topology List Example](https://apis.io/examples/apache-knox/admin-api-topology-list-example/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Apache Knox Admin REST Descriptors API](https://apis.io/collections/apache-knox/open-apache-knox-descriptors-api/)
+- [Apache Knox Admin REST Descriptors Providers API](https://apis.io/collections/apache-knox/open-apache-knox-providers-api/)
+- [Apache Knox Admin REST Descriptors Topologies API](https://apis.io/collections/apache-knox/open-apache-knox-topologies-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache Knox — jsonschema rules](https://apis.io/rules/apache-knox/apache-knox-jsonschema-spectral-rules/)
+- [Apache Knox API Rules](https://apis.io/rules/apache-knox/apache-knox-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Knox Authentication](https://apis.io/security/apache-knox/apache-knox-authentication/)
+- [Apache Knox Domain Security](https://apis.io/security/apache-knox/apache-knox-domain-security/)
+- [Apache Knox Vulnerability Disclosure](https://apis.io/security/apache-knox/apache-knox-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Knox Plans Pricing](https://apis.io/plans/apache-knox/apache-knox-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Knox Rate Limits](https://apis.io/rate-limits/apache-knox/apache-knox-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Knox Finops](https://apis.io/finops/apache-knox/apache-knox-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://knox.apache.org/books/knox-2-0-0/user-guide.html)
-- [OpenAPI](openapi/apache-knox-admin-api.yaml)
+- [Getting started](https://knox.apache.org/books/knox-2-0-0/user-guide.html#Quick+Start)
+- [Terms of service](https://www.apache.org/licenses/LICENSE-2.0)
+- [GitHub](https://github.com/apache)
 
-### Apache Knox Gateway API
-The Knox gateway proxies and secures access to Hadoop ecosystem services including HDFS, Hive, HBase, YARN, and Oozie.
+## API Evangelist rating
 
-**Human URL:** [https://knox.apache.org/books/knox-2-0-0/user-guide.html#Service+Details](https://knox.apache.org/books/knox-2-0-0/user-guide.html#Service+Details)
+**Kin Score 38.6** — thin · rubric 0.24.0 · scored 2026-10-17
 
-#### Tags:
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 48.3 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 18.4 |
 
- - API Gateway, Hadoop, Proxy, Security
+**Agent readiness 22.9** — agent-aware
 
-#### Properties
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-- [Documentation](https://knox.apache.org/books/knox-2-0-0/user-guide.html#Service+Details)
+**Regulatory alignment 26.5** — Horizontal (data, software, accessibility, platform)
 
-## Common Properties
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-knox/](https://apis.io/providers/apache-knox/).
 
-- [GitHubOrganization](https://github.com/apache)
-- [GitHubRepository](https://github.com/apache/knox)
-- [Documentation](https://knox.apache.org/books/knox-2-0-0/user-guide.html)
-- [GettingStarted](https://knox.apache.org/books/knox-2-0-0/user-guide.html#Quick+Start)
-- [TermsOfService](https://www.apache.org/licenses/LICENSE-2.0)
-- [SpectralRules](rules/apache-knox-spectral-rules.yml)
-- [Vocabulary](vocabulary/apache-knox-vocabulary.yaml)
-- [NaftikoCapability](capabilities/gateway-management.yaml)
+## How this profile is made
 
-## Features
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-| Name | Description |
-|------|-------------|
-| Single Access Point | Unified gateway for all Hadoop REST services eliminating direct cluster access. |
-| Authentication | Kerberos, LDAP, OAuth2, and JWT authentication support. |
-| SSO Integration | SAML2-based SSO and token-based federation across Hadoop services. |
-| Authorization | Fine-grained authorization via Apache Ranger integration. |
-| SSL/TLS Termination | SSL/TLS termination at the gateway for encrypted communication. |
-| Service Discovery | Automatic service discovery via Ambari and Cloudera Manager integration. |
-| Topology Management | Dynamic topology configuration without gateway restarts. |
-| Audit Logging | Comprehensive audit logs for all gateway interactions. |
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Knox: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-## Use Cases
+## Open an issue
 
-| Name | Description |
-|------|-------------|
-| Hadoop Cluster Security | Secure and centralize access to all Hadoop REST APIs through Knox. |
-| Cloud Hadoop Access | Provide secure REST access to EMR, HDInsight, and Dataproc clusters. |
-| Hadoop SSO | Enable single sign-on across Ambari, Hue, Spark UI, and other Hadoop UIs. |
-| REST API Proxying | Proxy WebHDFS, Hive JDBC/REST, HBase REST, and YARN REST through Knox. |
-
-## Integrations
-
-| Name | Description |
-|------|-------------|
-| Apache Hadoop HDFS | WebHDFS REST API proxied and secured through Knox. |
-| Apache Hive | Hive JDBC and REST API access via Knox gateway. |
-| Apache HBase | HBase REST API proxied through Knox with authentication. |
-| Apache Ranger | Authorization policy enforcement via Ranger Knox plugin. |
-| Apache Ambari | Ambari REST API proxied through Knox for cluster management. |
-
-## Artifacts
-
-Machine-readable API specifications organized by format.
-
-### OpenAPI
-
-- [Apache Knox Admin REST API](openapi/apache-knox-admin-api.yaml)
-
-### JSON Schema
-
-5 schema files extracted from the Admin REST API OpenAPI specification.
-
-### JSON Structure
-
-5 JSON Structure files converted from JSON Schema files.
-
-### Examples
-
-5 example JSON files generated from JSON Schema definitions.
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Apache Knox Admin REST API](capabilities/shared/knox-admin-api.yaml) — 4 operations for topology management
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Apache Knox Gateway Management](capabilities/gateway-management.yaml) | Apache Knox Admin REST API | 5 | Hadoop Administrator, Security Engineer |
-
-## Vocabulary
-
-- [Apache Knox Vocabulary](vocabulary/apache-knox-vocabulary.yaml) — Unified taxonomy mapping 4 resources, 4 actions, 1 workflow, and 2 personas
-
-## Rules
-
-- [Apache Knox Spectral Rules](rules/apache-knox-spectral-rules.yml) — 13 rules across 7 categories enforcing Apache Knox Admin API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-knox/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
